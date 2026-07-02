@@ -10,7 +10,7 @@ intro: |
 
   I'm a self-declared nerd, and if I'm not behind an IDE coding my little heart away, you'll probably find me out in nature, at the gym.
 
-  <a href="/Hounakey.Resume.pdf" download class="dib mt3 pv2 ph3 br-pill white bg-dark-blue f6 fw6" style="text-decoration:none;">Download Resume ↓</a>
+  Download my <a href="/Hounakey.Resume.pdf" target="_blank" rel="noopener">resumé</a>.
 show_outro: true
 outro: |
   ## Education
