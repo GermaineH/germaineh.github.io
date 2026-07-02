@@ -6,8 +6,9 @@ use_featured: false
 number_categories: 0
 show_intro: true
 intro: |
-I'm currently pursuing my Master's in Artificial Intelligence with a concentration in Machine Learning at the University of Michigan–Dearborn. My experience includes computer vision, object detection, and building machine learning pipelines for real-world research applications. I'm always excited to learn new technologies and tackle challenging problems in AI.
-I'm a self-declared nerd, and if I'm not behind an IDE coding my little heart away, you'll probably find me out in nature, at the gym.  
+  I'm currently pursuing my Master's in Artificial Intelligence with a concentration in Machine Learning at the University of Michigan–Dearborn. My experience includes computer vision, object detection, and building machine learning pipelines for real-world research applications. I'm always excited to learn new technologies and tackle challenging problems in AI.
+
+  I'm a self-declared nerd, and if I'm not behind an IDE coding my little heart away, you'll probably find me out in nature, at the gym.
 show_outro: true
 outro: |
   ## Experience
