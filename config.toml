@@ -1,0 +1,132 @@
+baseURL = "https://germainehounakey.com/"
+theme = "hugo-apero"
+languageCode = "en"
+title = "Germaine Hounakey"
+author = "Germaine Hounakey"
+copyright = "" # set to override the auto generated copyright using org info and now year
+googleAnalytics = ""
+metaDataFormat = "yaml"
+footnoteReturnLinkContents = "&#8617;" # ↩
+[pagination]
+  pagerSize = 5
+preserveTaxonomyNames = true
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
+enableEmoji = true
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark.renderer]
+    unsafe = true
+    hardwraps = false
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 2
+    ordered = false
+  [markup.highlight]
+    style = "github"
+
+[params]
+  orgName = "Germaine Hounakey"
+  orgLocal = "Washington, DC"
+  description = "Germaine Hounakey — AI/ML Engineer specializing in computer vision, multi-modal imaging, and applied machine learning."
+  favicon = "/img/favicon.ico"
+  logo = ""
+  mainSections = ["project"]
+  navallcaps = false
+  socialInHeader = true
+  socialInFooter = true
+  sharing_image = ""
+  twitter = ""
+
+  theme = "water"
+  custom_theme = ""
+
+  customtextFontFamily = "Commissioner"
+  customheadingFontFamily = "Fraunces"
+  textFontFamily = "sans-serif"
+  headingFontFamily = "sans-serif"
+
+  comments = ""
+
+  [params.utterances]
+    repo_name = ""
+    issue_term = "pathname"
+    theme = "boxy-light"
+    label = "comments"
+
+  [params.giscus]
+    repo = ""
+    repo_id = ""
+    category = ""
+    category_id = ""
+    mapping = "pathname"
+    reactions_enabled = "1"
+    emit_metadata = "0"
+    theme = "light"
+    lang = "en"
+
+  [params.math]
+    renderer = "katex"
+
+  [[params.social]]
+      icon      = "github"
+      icon_pack = "fab"
+      url       = "https://github.com/GermaineH"
+  [[params.social]]
+      icon      = "linkedin"
+      icon_pack = "fab"
+      url       = "https://www.linkedin.com/in/germaine-hounakey/"
+  [[params.social]]
+      icon      = "envelope"
+      icon_pack = "fas"
+      url       = "mailto:germainehounakey4@gmail.com"
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+
+[menu]
+  [[menu.header]]
+    name = "About"
+    title = "About Germaine"
+    url = "/about/"
+    weight = 1
+  [[menu.header]]
+    name = "Projects"
+    title = "Project Portfolio"
+    url = "/project/"
+    weight = 2
+  [[menu.header]]
+    name = "Contact"
+    title = "Contact"
+    url = "/contact/"
+    weight = 3
+
+  [[menu.footer]]
+    name = "Contact"
+    title = "Contact form"
+    url = "/contact/"
+    weight = 1
+
+[privacy]
+  [privacy.disqus]
+    disable = true
+  [privacy.googleAnalytics]
+    disable = true
+    anonymizeIP = true
+    respectDoNotTrack = true
+  [privacy.instagram]
+    disable = true
+    simple = true
+  [privacy.x]
+    disable = true
+    enableDNT = true
+    simple = false
+  [privacy.vimeo]
+    disable = true
+    enableDNT = true
+    simple = true
+  [privacy.youtube]
+    disable = true
+    privacyEnhanced = true
