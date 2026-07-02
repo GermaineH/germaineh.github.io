@@ -1,4 +1,5 @@
 {{ range .Params.link_list }}
+  {{ if .url }}
   {{ $link := .url }}
   {{ $scheme := (urls.Parse $link).Scheme }}
   {{ $target := "" }}
@@ -10,4 +11,7 @@
   <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-20">
     <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }}>{{ .name }}</a>
   </li>
+  {{ else }}
+  <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-20">{{ .name }}</li>
+  {{ end }}
 {{ end }}
