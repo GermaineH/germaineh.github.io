@@ -7,12 +7,11 @@ show_social_links: true # specify social accounts in site config
 audio_link_label: ""
 link_list_label: "Interests"
 link_list:
-- name: Hiking
-  url: https://en.wikipedia.org/wiki/Hiking
+- name: Artificial Intelligence
+- name: Machine Learning
 - name: Computer Vision
-  url: https://en.wikipedia.org/wiki/Computer_vision
-- name: Reading
-  url: https://en.wikipedia.org/wiki/Reading
+- name: Data Visualization
+- name: Data Analytics
 ---
 
 ** index doesn't contain a body, just front matter above. **
