@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,41 +14,48 @@
       property="og:description"
       content="AI/ML engineer working on computer vision and multimodal data analysis. AI Engineer Fellow at USACE and MS AI student at the University of Michigan."
     />
-    <meta
-      property="og:image"
-      content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23eddbd3'/%3E%3Crect x='72' y='72' width='1056' height='486' rx='18' fill='%23f4e3da' stroke='%23dcb6ab'/%3E%3Ctext x='120' y='230' fill='%23e97265' font-size='42' font-family='monospace'%3E~/germaine $%3C/text%3E%3Ctext x='120' y='330' fill='%23303030' font-size='68' font-family='monospace'%3EGermaine Hounakey%3C/text%3E%3Ctext x='120' y='410' fill='%235c4f49' font-size='30' font-family='sans-serif'%3Eai%2Fml engineer · computer vision · multimodal ml%3C/text%3E%3C/svg%3E"
-    />
     <link
       rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23eddbd3'/%3E%3Cpath d='M14 18h36v28H14z' fill='%23303030' stroke='%23e97265' stroke-width='2'/%3E%3Cpath d='M20 28l6 6-6 6' fill='none' stroke='%23e97265' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M32 40h10' stroke='%23D08A7E' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23eddbd3'/%3E%3Ctext x='32' y='42' font-size='30' font-family='monospace' text-anchor='middle' fill='%23e2604f'%3EG%3C/text%3E%3C/svg%3E"
     />
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap");
 
       :root {
-        --bg-primary: #eddbd3;
-        --bg-surface: #f4e3da;
-        --bg-surface-hover: #ecd5c8;
-        --border-default: #dcb6ab;
-        --text-primary: #303030;
-        --text-secondary: #5c4f49;
-        --text-tertiary: #8a746c;
-        --accent: #e97265;
-        --accent-dim: rgba(233, 114, 101, 0.2);
-        --accent-secondary: #D08A7E;
-        --accent-deep: #b5574a;
-        --syntax-keyword: #D08A7E;
-        --syntax-string: #f0b8ab;
-        --syntax-function: #e97265;
-        --syntax-comment: #9c8a83;
-        --danger: #d97a68;
-        --warning: #d9b46b;
-        --success: #f2ddd4;
-        --amber: #d9b46b;
-        --max-width: 1100px;
-        --nav-height: 72px;
-        --radius: 8px;
-        --transition: 200ms ease;
+        --bg: #eddbd3;
+        --surface: #f7ece6;
+        --surface-2: #f1ddd3;
+        --ink: #2e2b29;
+        --ink-soft: #6b5c54;
+        --ink-faint: #9c8a80;
+        --coral: #d5543f;
+        --coral-bright: #e2604f;
+        --coral-soft: #c9836f;
+        --line: #ddbdb0;
+        --terminal-bg: #2a201d;
+        --terminal-ink: #f1e3da;
+        --shadow: rgba(46, 43, 41, 0.08);
+        --max-width: 1080px;
+        --nav-height: 76px;
+        --radius: 14px;
+        --radius-sm: 8px;
+        --transition: 220ms ease;
+      }
+
+      html[data-theme="dark"] {
+        --bg: #1d1917;
+        --surface: #262020;
+        --surface-2: #2e2725;
+        --ink: #f1e5de;
+        --ink-soft: #c8b4a9;
+        --ink-faint: #8f7d74;
+        --coral: #ef7a63;
+        --coral-bright: #ef7a63;
+        --coral-soft: #d69a86;
+        --line: #423531;
+        --terminal-bg: #121010;
+        --terminal-ink: #f1e3da;
+        --shadow: rgba(0, 0, 0, 0.4);
       }
 
       * {
@@ -61,14 +68,12 @@
 
       body {
         margin: 0;
-        background:
-          radial-gradient(circle at top, rgba(208, 138, 126, 0.12), transparent 24%),
-          linear-gradient(180deg, rgba(233, 114, 101, 0.05), transparent 18%),
-          var(--bg-primary);
-        color: var(--text-primary);
+        background: var(--bg);
+        color: var(--ink);
         font-family: "IBM Plex Sans", sans-serif;
         line-height: 1.65;
         min-height: 100vh;
+        transition: background var(--transition), color var(--transition);
       }
 
       a {
@@ -76,22 +81,17 @@
         text-decoration: none;
       }
 
-      img,
-      svg {
-        display: block;
-      }
-
       button {
         font: inherit;
       }
 
       ::selection {
-        background: var(--accent-dim);
-        color: var(--text-primary);
+        background: rgba(226, 96, 79, 0.22);
+        color: var(--ink);
       }
 
       .container {
-        width: min(calc(100% - 2rem), var(--max-width));
+        width: min(calc(100% - 2.4rem), var(--max-width));
         margin: 0 auto;
       }
 
@@ -99,20 +99,33 @@
         font-family: "JetBrains Mono", monospace;
       }
 
+      .serif {
+        font-family: "Fraunces", serif;
+      }
+
+      /* ---------- NAV ---------- */
       .site-nav {
         position: sticky;
         top: 0;
         z-index: 1000;
         height: var(--nav-height);
-        border-bottom: 1px solid rgba(220, 182, 171, 0.75);
-        background: rgba(237, 219, 211, 0.75);
-        backdrop-filter: blur(12px);
+        border-bottom: 1px solid transparent;
+        background: rgba(237, 219, 211, 0);
+        backdrop-filter: blur(10px);
         transition: background var(--transition), border-color var(--transition);
       }
 
+      html[data-theme="dark"] .site-nav {
+        background: rgba(29, 25, 23, 0);
+      }
+
       .site-nav.is-scrolled {
-        background: rgba(237, 219, 211, 0.94);
-        border-color: var(--border-default);
+        border-color: var(--line);
+        background: rgba(237, 219, 211, 0.86);
+      }
+
+      html[data-theme="dark"] .site-nav.is-scrolled {
+        background: rgba(29, 25, 23, 0.86);
       }
 
       .nav-inner {
@@ -124,23 +137,72 @@
       }
 
       .nav-brand {
-        color: var(--accent);
-        font-size: 0.98rem;
-        font-weight: 700;
-        letter-spacing: 0.02em;
-        white-space: nowrap;
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 1.15rem;
+        letter-spacing: -0.01em;
+      }
+
+      .nav-brand .dot {
+        color: var(--coral-bright);
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .theme-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--surface);
+        color: var(--ink);
+        cursor: pointer;
+        transition: border-color var(--transition), color var(--transition), transform var(--transition);
+      }
+
+      .theme-toggle:hover {
+        color: var(--coral-bright);
+        border-color: var(--coral-soft);
+        transform: translateY(-1px);
+      }
+
+      .theme-toggle svg {
+        width: 18px;
+        height: 18px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.8;
+      }
+
+      .theme-toggle .icon-moon {
+        display: none;
+      }
+
+      html[data-theme="dark"] .theme-toggle .icon-sun {
+        display: none;
+      }
+
+      html[data-theme="dark"] .theme-toggle .icon-moon {
+        display: block;
       }
 
       .nav-toggle {
         display: none;
         align-items: center;
         justify-content: center;
-        width: 42px;
-        height: 42px;
-        border: 1px solid var(--border-default);
-        border-radius: 6px;
-        background: var(--bg-surface);
-        color: var(--text-primary);
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--surface);
+        color: var(--ink);
       }
 
       .nav-toggle span,
@@ -148,7 +210,7 @@
       .nav-toggle span::after {
         content: "";
         display: block;
-        width: 18px;
+        width: 16px;
         height: 2px;
         border-radius: 999px;
         background: currentColor;
@@ -156,11 +218,11 @@
       }
 
       .nav-toggle span::before {
-        transform: translateY(-6px);
+        transform: translateY(-5px);
       }
 
       .nav-toggle span::after {
-        transform: translateY(4px);
+        transform: translateY(3px);
       }
 
       .nav-toggle[aria-expanded="true"] span {
@@ -178,12 +240,12 @@
       .nav-links {
         display: flex;
         align-items: center;
-        gap: 1.1rem;
+        gap: 1.4rem;
       }
 
       .nav-link {
         position: relative;
-        color: var(--text-secondary);
+        color: var(--ink-soft);
         font-size: 0.92rem;
         transition: color var(--transition);
       }
@@ -192,42 +254,22 @@
         content: "";
         position: absolute;
         left: 0;
-        bottom: -0.55rem;
+        bottom: -0.5rem;
         width: 100%;
         height: 2px;
-        background: var(--accent);
+        background: var(--coral-bright);
         transform: scaleX(0);
         transform-origin: center;
         transition: transform var(--transition);
       }
 
-      .nav-link::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: -0.7rem;
-        width: 0.35rem;
-        height: 0.35rem;
-        border-radius: 50%;
-        background: var(--accent);
-        opacity: 0;
-        transform: translateY(-50%) scale(0.8);
-        transition: opacity var(--transition), transform var(--transition);
-      }
-
       .nav-link:hover,
-      .nav-link:focus-visible,
       .nav-link.is-active {
-        color: var(--accent);
+        color: var(--ink);
       }
 
       .nav-link.is-active::after {
         transform: scaleX(1);
-      }
-
-      .nav-link.is-active::before {
-        opacity: 1;
-        transform: translateY(-50%) scale(1);
       }
 
       main {
@@ -235,520 +277,444 @@
       }
 
       .section {
-        padding: 5.5rem 0;
+        padding: 5rem 0;
         scroll-margin-top: calc(var(--nav-height) + 1rem);
       }
 
-      .section-header {
-        margin-bottom: 2rem;
-      }
-
-      .section-kicker {
-        margin-bottom: 0.55rem;
-        color: var(--text-tertiary);
-        font-size: 0.92rem;
-        letter-spacing: 0.08em;
-        text-transform: lowercase;
+      .section-eyebrow {
+        margin-bottom: 0.6rem;
+        color: var(--coral-bright);
+        font-size: 0.85rem;
+        font-family: "JetBrains Mono", monospace;
+        letter-spacing: 0.04em;
       }
 
       .section-title {
-        margin: 0;
-        font-family: "JetBrains Mono", monospace;
-        font-size: clamp(1.6rem, 2vw, 2rem);
-        line-height: 1.2;
+        margin: 0 0 0.75rem;
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: clamp(1.7rem, 2.4vw, 2.3rem);
       }
 
       .section-description {
         max-width: 60ch;
-        margin-top: 0.75rem;
-        color: var(--text-secondary);
+        color: var(--ink-soft);
       }
 
+      /* ---------- HERO ---------- */
       .hero {
         position: relative;
-        padding-top: calc(6.5rem + var(--nav-height));
-        padding-bottom: 6rem;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image:
-          linear-gradient(rgba(48, 48, 48, 0.045) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(48, 48, 48, 0.045) 1px, transparent 1px);
-        background-size: 28px 28px;
-        mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 88%);
-        pointer-events: none;
-      }
-
-      .hero-inner {
-        position: relative;
+        padding-top: calc(3rem + var(--nav-height));
+        padding-bottom: 4.5rem;
       }
 
       .eyebrow {
         margin-bottom: 1rem;
-        color: var(--accent-secondary);
+        color: var(--coral-bright);
         font-size: 0.88rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .hero-name {
-        margin: 0;
         font-family: "JetBrains Mono", monospace;
-        font-size: clamp(2.55rem, 6vw, 4.2rem);
-        line-height: 1.05;
-        letter-spacing: -0.03em;
+        letter-spacing: 0.04em;
       }
 
-      .hero-pronoun {
+      .greeting {
+        margin: 0 0 1.1rem;
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+        line-height: 1.1;
+        letter-spacing: -0.01em;
+      }
+
+      .greeting .wave {
         display: inline-block;
-        margin-left: 0.6rem;
-        color: var(--text-tertiary);
-        font-family: "IBM Plex Sans", sans-serif;
-        font-size: 0.9rem;
-        font-weight: 400;
-        letter-spacing: 0;
-        vertical-align: middle;
+        animation: wave 2.4s ease-in-out infinite;
+        transform-origin: 70% 70%;
       }
 
-      .hero-tagline {
+      @keyframes wave {
+        0%, 100% { transform: rotate(0deg); }
+        10% { transform: rotate(14deg); }
+        20% { transform: rotate(-8deg); }
+        30% { transform: rotate(14deg); }
+        40% { transform: rotate(-4deg); }
+        50% { transform: rotate(10deg); }
+        60%, 100% { transform: rotate(0deg); }
+      }
+
+      .intro {
+        max-width: 62ch;
+        font-size: 1.08rem;
+        color: var(--ink-soft);
+        margin: 0 0 1rem;
+      }
+
+      .intro strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      .personal-line {
+        font-style: italic;
+      }
+
+      .hero-actions {
         display: flex;
         flex-wrap: wrap;
+        gap: 0.85rem;
+        margin: 1.6rem 0 2.6rem;
+      }
+
+      .btn-primary,
+      .btn-ghost {
+        display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        margin-top: 1rem;
-        color: var(--text-secondary);
-        font-size: clamp(1rem, 2vw, 1.12rem);
-      }
-
-      .cursor {
-        color: var(--accent);
-        animation: blink 1s steps(1, end) infinite;
-      }
-
-      @keyframes blink {
-        0%,
-        49% {
-          opacity: 1;
-        }
-        50%,
-        100% {
-          opacity: 0;
-        }
-      }
-
-      .hero-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.9fr);
-        gap: 2rem;
-        align-items: start;
-        margin-top: 2.2rem;
-      }
-
-      .terminal {
-        border: 1px solid rgba(233, 114, 101, 0.35);
-        border-radius: var(--radius);
-        background: linear-gradient(180deg, rgba(58, 55, 54, 0.96), rgba(32, 30, 29, 0.99));
-        overflow: hidden;
-        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
-      }
-
-      .terminal-bar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0.75rem 1rem;
-        border-bottom: 1px solid rgba(233, 114, 101, 0.3);
-        background: rgba(20, 18, 17, 0.85);
-      }
-
-      .terminal-controls {
-        display: flex;
-        gap: 0.45rem;
-      }
-
-      .terminal-controls span {
-        width: 0.75rem;
-        height: 0.75rem;
-        border-radius: 50%;
-      }
-
-      .terminal-controls span:nth-child(1) {
-        background: var(--danger);
-      }
-
-      .terminal-controls span:nth-child(2) {
-        background: var(--warning);
-      }
-
-      .terminal-controls span:nth-child(3) {
-        background: var(--success);
-      }
-
-      .terminal-title {
-        color: #cbb8b0;
-        font-size: 0.78rem;
-      }
-
-      .terminal-body {
-        margin: 0;
-        padding: 1.25rem;
-        color: #e9dcd6;
-        font-family: "JetBrains Mono", monospace;
-        font-size: 0.9rem;
-        line-height: 1.7;
-        overflow-x: auto;
-      }
-
-      .prompt {
-        color: #a89890;
-      }
-
-      .command {
-        color: var(--accent);
-      }
-
-      .output {
-        color: #e9dcd6;
-      }
-
-      .hash {
-        color: var(--syntax-function);
-      }
-
-      .highlight {
-        color: var(--syntax-string);
-      }
-
-      .comment {
-        color: var(--syntax-comment);
-      }
-
-      .hero-panel {
-        border: 1px solid var(--border-default);
-        border-radius: var(--radius);
-        background: rgba(244, 227, 218, 0.85);
-        padding: 1.25rem;
-      }
-
-      .hero-panel h2 {
-        margin: 0 0 0.75rem;
-        font-family: "JetBrains Mono", monospace;
+        padding: 0.75rem 1.3rem;
+        border-radius: 999px;
         font-size: 0.95rem;
-        color: var(--accent);
+        font-weight: 500;
+        transition: transform var(--transition), background var(--transition), border-color var(--transition), color var(--transition);
       }
 
-      .hero-panel p {
-        margin: 0;
-        color: var(--text-secondary);
+      .btn-primary {
+        background: var(--coral-bright);
+        color: #fdf6f2;
       }
 
-      .signal-list {
-        display: grid;
-        gap: 0.8rem;
-        margin-top: 1rem;
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        background: var(--coral);
       }
 
-      .signal-item {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 0.8rem;
-        align-items: start;
+      .btn-ghost {
+        border: 1px solid var(--line);
+        color: var(--ink);
+        background: transparent;
       }
 
-      .signal-label {
-        color: var(--text-tertiary);
-        font-family: "JetBrains Mono", monospace;
-        font-size: 0.78rem;
-        text-transform: uppercase;
-      }
-
-      .signal-value {
-        color: var(--text-primary);
-      }
-
-      .quick-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.9rem;
-        margin-top: 1.5rem;
+      .btn-ghost:hover {
+        border-color: var(--coral-soft);
+        color: var(--coral-bright);
+        transform: translateY(-2px);
       }
 
       .icon-link {
         display: inline-flex;
         align-items: center;
         gap: 0.55rem;
-        padding: 0.7rem 0.85rem;
-        border: 1px solid var(--border-default);
+        padding: 0.65rem 1.1rem;
+        border: 1px solid var(--line);
         border-radius: 999px;
-        color: var(--text-secondary);
-        background: rgba(244, 227, 218, 0.55);
-        transition:
-          color var(--transition),
-          border-color var(--transition),
-          background var(--transition),
-          transform var(--transition);
+        color: var(--ink);
+        background: var(--surface);
+        font-size: 0.92rem;
+        transition: color var(--transition), border-color var(--transition), background var(--transition), transform var(--transition);
       }
 
       .icon-link:hover,
       .icon-link:focus-visible {
-        color: var(--accent);
-        border-color: var(--accent-dim);
-        background: rgba(233, 114, 101, 0.08);
-        transform: translateY(-1px);
-      }
-
-      .icon-link svg {
-        width: 1rem;
-        height: 1rem;
-        fill: currentColor;
-      }
-
-      .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-        gap: 1rem;
-      }
-
-      .project-featured {
-        grid-column: span 2;
-        background:
-          linear-gradient(180deg, rgba(208, 138, 126, 0.08), transparent 28%),
-          var(--bg-surface);
-      }
-
-      .project-featured .repo-link {
-        font-size: 1.12rem;
-      }
-
-      .project-meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.55rem;
-        margin-top: 0.95rem;
-      }
-
-      .card {
-        grid-column: span 3;
-        height: 100%;
-        padding: 1.2rem;
-        border: 1px solid var(--border-default);
-        border-radius: var(--radius);
-        background: var(--bg-surface);
-        transition:
-          border-color var(--transition),
-          background var(--transition),
-          box-shadow var(--transition),
-          transform var(--transition);
-      }
-
-      .card:hover,
-      .card:focus-within {
-        border-color: var(--accent-dim);
-        background: var(--bg-surface-hover);
-        box-shadow: 0 0 20px rgba(233, 114, 101, 0.06);
+        color: var(--coral-bright);
+        border-color: var(--coral-soft);
+        background: var(--surface-2);
         transform: translateY(-2px);
       }
 
-      .repo-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.55rem;
-        font-family: "JetBrains Mono", monospace;
-        font-size: 1.02rem;
-        color: var(--accent);
+      .icon-link svg {
+        width: 1.05rem;
+        height: 1.05rem;
+        fill: currentColor;
       }
 
-      .repo-link:hover,
-      .publication-title:hover,
-      .spec-toc a:hover,
-      .press-link:hover .press-title {
-        text-decoration: underline;
-        text-decoration-color: var(--accent);
-        text-underline-offset: 0.18em;
+      .hero-columns {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: 1.75rem;
+        align-items: stretch;
       }
 
-      .card p {
-        margin: 0.9rem 0 1rem;
-        color: var(--text-secondary);
-      }
-
-      .card-footer {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 0.75rem;
-        align-items: center;
-      }
-
-      .lang-pill,
-      .meta-pill,
-      .link-pill,
-      .version-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.45rem;
-        padding: 0.35rem 0.65rem;
-        border: 1px solid var(--border-default);
-        border-radius: 999px;
-        font-size: 0.78rem;
-        font-family: "JetBrains Mono", monospace;
-      }
-
-      .lang-pill {
-        background: rgba(255, 246, 242, 0.75);
-      }
-
-      .lang-dot,
-      .status-dot {
-        width: 0.5rem;
-        height: 0.5rem;
-        border-radius: 50%;
-        flex: 0 0 auto;
-      }
-
-      .stats {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        color: var(--text-tertiary);
-        font-size: 0.8rem;
-      }
-
-      .license-note {
-        color: var(--text-tertiary);
-        font-size: 0.78rem;
-        font-family: "JetBrains Mono", monospace;
-      }
-
-      .stats span {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.3rem;
-      }
-
-      .skills-block {
-        margin-top: 2rem;
-        padding: 1.2rem 1.3rem;
-        border: 1px solid var(--border-default);
+      /* ---------- TERMINAL (signature accent) ---------- */
+      .terminal {
         border-radius: var(--radius);
-        background: rgba(244, 227, 218, 0.68);
+        background: var(--terminal-bg);
+        overflow: hidden;
+        box-shadow: 0 18px 50px var(--shadow);
+        display: flex;
+        flex-direction: column;
       }
 
-      .skills-label {
-        margin-bottom: 0.9rem;
-        color: var(--text-tertiary);
-        font-size: 0.82rem;
+      .terminal-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.7rem 1rem;
+        border-bottom: 1px solid rgba(241, 227, 218, 0.1);
+      }
+
+      .terminal-controls {
+        display: flex;
+        gap: 0.4rem;
+      }
+
+      .terminal-controls span {
+        width: 0.65rem;
+        height: 0.65rem;
+        border-radius: 50%;
+      }
+
+      .terminal-controls span:nth-child(1) { background: #e2604f; }
+      .terminal-controls span:nth-child(2) { background: #d69a86; }
+      .terminal-controls span:nth-child(3) { background: #f1e3da; opacity: 0.5; }
+
+      .terminal-title {
+        color: #b3a49c;
+        font-size: 0.72rem;
+      }
+
+      .terminal-body {
+        margin: 0;
+        padding: 1.15rem;
+        color: var(--terminal-ink);
         font-family: "JetBrains Mono", monospace;
+        font-size: 0.86rem;
+        line-height: 1.75;
+        flex: 1;
       }
 
-      .skills-grid {
+      .prompt { color: #b3a49c; }
+      .command { color: #ef8a75; }
+      .output { color: var(--terminal-ink); }
+      .hash { color: #ef8a75; }
+      .highlight { color: #f0c1af; }
+
+      /* ---------- interests / currently panel ---------- */
+      .side-card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+      }
+
+      .side-card h2 {
+        margin: 0 0 0.8rem;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.82rem;
+        letter-spacing: 0.04em;
+        color: var(--ink-faint);
+        text-transform: lowercase;
+      }
+
+      .tag-row {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.55rem;
+        gap: 0.5rem;
       }
 
-      .skill-chip {
+      .tag-pill {
         display: inline-flex;
         align-items: center;
-        padding: 0.4rem 0.75rem;
-        border: 1px solid var(--border-default);
+        padding: 0.38rem 0.75rem;
         border-radius: 999px;
-        color: var(--text-primary);
-        background: rgba(255, 246, 242, 0.6);
-        font-family: "JetBrains Mono", monospace;
+        border: 1px solid var(--line);
+        background: var(--surface-2);
         font-size: 0.82rem;
-        transition:
-          border-color var(--transition),
-          background var(--transition),
-          color var(--transition);
+        color: var(--ink);
       }
 
-      .skill-chip:hover {
-        border-color: var(--accent-dim);
-        background: rgba(233, 114, 101, 0.08);
-        color: var(--accent);
-      }
-
-      .research-list {
+      .mini-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
         display: grid;
-        gap: 1.5rem;
+        gap: 0.65rem;
       }
 
-      .year-group {
-        padding-top: 1.5rem;
-        border-top: 1px solid rgba(220, 182, 171, 0.7);
-      }
-
-      .year-group:first-of-type {
-        padding-top: 0;
-        border-top: 0;
-      }
-
-      .publication {
-        display: grid;
-        grid-template-columns: 128px minmax(0, 1fr);
-        gap: 1rem;
-      }
-
-      .publication-year {
-        color: var(--text-tertiary);
-        font-family: "JetBrains Mono", monospace;
-        font-size: 1rem;
-        padding-top: 0.15rem;
-      }
-
-      .publication-title {
-        font-size: 1.08rem;
-        font-weight: 600;
-        color: var(--text-primary);
-      }
-
-      .publication-venue {
-        margin-top: 0.35rem;
-        color: var(--text-secondary);
-        font-style: italic;
-      }
-
-      .publication-authors {
-        margin-top: 0.35rem;
-        color: var(--text-tertiary);
-      }
-
-      .publication-authors strong {
-        color: var(--accent);
-        font-weight: 600;
-      }
-
-      .publication-note {
-        margin-top: 0.45rem;
-        color: var(--text-secondary);
+      .mini-list li {
+        position: relative;
+        padding-left: 1.1rem;
+        color: var(--ink-soft);
         font-size: 0.95rem;
       }
 
-      .publication-links {
+      .mini-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.5em;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--coral-bright);
+      }
+
+      .mini-list li strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      /* ---------- TIMELINE (experience) ---------- */
+      .timeline {
+        position: relative;
+        display: grid;
+        gap: 2.2rem;
+        padding-left: 1.9rem;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 6px;
+        bottom: 6px;
+        width: 1px;
+        background: var(--line);
+      }
+
+      .timeline-item {
+        position: relative;
+      }
+
+      .timeline-dot {
+        position: absolute;
+        left: -1.9rem;
+        top: 0.35rem;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: var(--bg);
+        border: 2px solid var(--coral-bright);
+      }
+
+      .timeline-item.is-current .timeline-dot {
+        background: var(--coral-bright);
+      }
+
+      .timeline-date {
+        color: var(--ink-faint);
+        font-size: 0.82rem;
+        margin-bottom: 0.3rem;
+      }
+
+      .timeline-role {
+        font-size: 1.12rem;
+        font-weight: 600;
+        color: var(--ink);
+        margin: 0 0 0.15rem;
+      }
+
+      .timeline-org {
+        color: var(--coral-bright);
+        font-size: 0.95rem;
+      }
+
+      .timeline-org:hover {
+        text-decoration: underline;
+        text-underline-offset: 0.15em;
+      }
+
+      .timeline-desc {
+        margin: 0.6rem 0 0;
+        color: var(--ink-soft);
+        max-width: 62ch;
+      }
+
+      .timeline-tags {
+        margin-top: 0.75rem;
+      }
+
+      .timeline-tags .tag-pill {
+        font-size: 0.76rem;
+        padding: 0.28rem 0.6rem;
+      }
+
+      /* ---------- education list ---------- */
+      .edu-list {
+        display: grid;
+        gap: 1.4rem;
+      }
+
+      .edu-item {
+        display: grid;
+        grid-template-columns: 130px minmax(0, 1fr);
+        gap: 1rem;
+        padding-bottom: 1.4rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .edu-item:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .edu-period {
+        color: var(--ink-faint);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.85rem;
+        padding-top: 0.1rem;
+      }
+
+      .edu-title {
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      .edu-venue {
+        margin-top: 0.25rem;
+        color: var(--ink-soft);
+        font-style: italic;
+      }
+
+      .edu-note {
+        margin-top: 0.45rem;
+        color: var(--ink-soft);
+        font-size: 0.95rem;
+      }
+
+      .edu-links {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.55rem;
-        margin-top: 0.85rem;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
       }
 
       .link-pill {
-        color: var(--accent);
-        transition:
-          border-color var(--transition),
-          background var(--transition),
-          color var(--transition);
+        display: inline-flex;
+        align-items: center;
+        padding: 0.3rem 0.65rem;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        font-size: 0.78rem;
+        font-family: "JetBrains Mono", monospace;
+        color: var(--coral-bright);
+        transition: border-color var(--transition), background var(--transition);
       }
 
-      .link-pill:hover,
-      .link-pill:focus-visible {
-        border-color: var(--accent-dim);
-        background: rgba(233, 114, 101, 0.08);
+      .link-pill:hover {
+        border-color: var(--coral-soft);
+        background: var(--surface-2);
       }
 
+      /* ---------- skills ---------- */
+      .skills-block {
+        margin-bottom: 1.4rem;
+      }
+
+      .skills-block:last-child {
+        margin-bottom: 0;
+      }
+
+      .skills-label {
+        margin-bottom: 0.75rem;
+        color: var(--ink-faint);
+        font-size: 0.8rem;
+        font-family: "JetBrains Mono", monospace;
+        letter-spacing: 0.03em;
+      }
+
+      /* ---------- leadership ---------- */
       .press-list {
         display: grid;
         gap: 0.85rem;
@@ -756,143 +722,154 @@
 
       .press-link {
         display: grid;
-        grid-template-columns: 38px minmax(0, 1fr) auto;
+        grid-template-columns: 42px minmax(0, 1fr) auto;
         gap: 1rem;
         align-items: center;
-        padding: 1rem 1rem 1rem 1.15rem;
-        border: 1px solid var(--border-default);
+        padding: 1.05rem 1.1rem;
+        border: 1px solid var(--line);
         border-left: 2px solid transparent;
         border-radius: var(--radius);
-        background: rgba(244, 227, 218, 0.6);
-        transition:
-          background var(--transition),
-          border-color var(--transition),
-          box-shadow var(--transition);
+        background: var(--surface);
+        transition: background var(--transition), border-color var(--transition), transform var(--transition);
       }
 
-      .press-link:hover,
-      .press-link:focus-visible {
-        background: var(--bg-surface-hover);
-        border-left-color: var(--accent);
-        box-shadow: 0 0 20px rgba(233, 114, 101, 0.06);
+      .press-link:hover {
+        border-left-color: var(--coral-bright);
+        transform: translateX(2px);
       }
 
       .press-icon {
         display: grid;
         place-items: center;
-        width: 28px;
-        height: 28px;
-        border: 1px solid var(--border-default);
-        border-radius: 6px;
-        color: var(--text-tertiary);
-        background: rgba(255, 246, 242, 0.7);
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        background: var(--surface-2);
+        color: var(--ink-faint);
         font-family: "JetBrains Mono", monospace;
-        font-size: 0.8rem;
+        font-size: 0.72rem;
       }
 
       .press-title {
         font-size: 1rem;
         font-weight: 600;
-        transition: color var(--transition);
+      }
+
+      .press-link:hover .press-title {
+        color: var(--coral-bright);
       }
 
       .press-meta {
         margin-top: 0.2rem;
-        color: var(--text-secondary);
-      }
-
-      .press-meta strong {
-        font-weight: 500;
+        color: var(--ink-soft);
+        font-size: 0.92rem;
       }
 
       .press-blurb {
         margin-top: 0.25rem;
-        color: var(--text-tertiary);
+        color: var(--ink-faint);
         font-style: italic;
+        font-size: 0.92rem;
       }
 
+      .press-arrow {
+        color: var(--ink-faint);
+      }
+
+      /* ---------- about ---------- */
       .about-grid {
         display: grid;
-        grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-        gap: 1.25rem;
+        grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+        gap: 1.5rem;
       }
 
       .about-card {
-        padding: 1.3rem;
-        border: 1px solid var(--border-default);
+        padding: 1.5rem;
+        border: 1px solid var(--line);
         border-radius: var(--radius);
-        background: rgba(244, 227, 218, 0.7);
-      }
-
-      .about-card p {
-        margin: 0;
-        color: var(--text-secondary);
-      }
-
-      .about-meta {
-        margin-top: 0.9rem;
-        color: var(--text-tertiary);
-        font-size: 0.88rem;
-        font-family: "JetBrains Mono", monospace;
-      }
-
-      .about-meta a {
-        color: var(--accent);
-      }
-
-      .about-meta a:hover,
-      .about-meta a:focus-visible {
-        text-decoration: underline;
-        text-underline-offset: 0.18em;
+        background: var(--surface);
       }
 
       .contact-links {
         display: flex;
-        flex-wrap: wrap;
-        gap: 0.8rem 1rem;
-        margin-top: 1rem;
+        flex-direction: column;
+        gap: 0.9rem;
       }
 
       .contact-links a {
-        color: var(--accent);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--coral-bright);
         font-family: "JetBrains Mono", monospace;
+        font-size: 0.95rem;
       }
 
-      .contact-links a:hover,
-      .contact-links a:focus-visible {
+      .contact-links a:hover {
         text-decoration: underline;
         text-underline-offset: 0.18em;
       }
 
+      .email-box {
+        display: grid;
+        gap: 0.6rem;
+      }
+
+      .email-label {
+        font-size: 0.82rem;
+        color: var(--ink-faint);
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .email-input {
+        width: 100%;
+        padding: 0.7rem 0.85rem;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-sm);
+        background: var(--surface-2);
+        color: var(--ink);
+        font-family: "IBM Plex Sans", sans-serif;
+        font-size: 0.95rem;
+        resize: vertical;
+        transition: border-color var(--transition), background var(--transition);
+      }
+
+      .email-input:focus {
+        outline: none;
+        border-color: var(--coral-soft);
+        background: var(--surface);
+      }
+
+      .email-box .btn-primary {
+        justify-self: start;
+        border: none;
+        cursor: pointer;
+        margin-top: 0.3rem;
+      }
+
       .colophon {
-        margin-top: 1rem;
-        color: var(--text-tertiary);
-        font-size: 0.88rem;
+        margin-top: 1.3rem;
+        color: var(--ink-faint);
+        font-size: 0.85rem;
       }
 
+      /* ---------- footer ---------- */
       .footer {
-        padding: 2rem 0 3rem;
-      }
-
-      .footer-rule {
-        width: min(100%, 320px);
-        margin: 0 auto 1rem;
-        border: 0;
-        border-top: 1px solid rgba(220, 182, 171, 0.72);
+        padding: 2.2rem 0 3rem;
+        border-top: 1px solid var(--line);
       }
 
       .footer-copy {
         text-align: center;
-        color: var(--text-tertiary);
-        font-size: 0.88rem;
+        color: var(--ink-faint);
+        font-size: 0.85rem;
       }
 
+      /* ---------- reveal ---------- */
       .reveal {
         opacity: 0;
         transform: translateY(12px);
-        transition:
-          opacity 400ms ease-out,
-          transform 400ms ease-out;
+        transition: opacity 400ms ease-out, transform 400ms ease-out;
         transition-delay: var(--delay, 0ms);
       }
 
@@ -902,37 +879,19 @@
       }
 
       @media (max-width: 900px) {
-        .hero-grid,
+        .hero-columns,
         .about-grid {
           grid-template-columns: 1fr;
         }
-
-        .publication {
-          grid-template-columns: 1fr;
-          gap: 0.35rem;
-        }
-
-        .publication-year {
-          font-size: 0.95rem;
-        }
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 640px) {
         .section {
-          padding: 4.5rem 0;
+          padding: 3.5rem 0;
         }
 
         .hero {
-          padding-top: calc(5.25rem + var(--nav-height));
-        }
-
-        .projects-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .card,
-        .project-featured {
-          grid-column: auto;
+          padding-top: calc(2rem + var(--nav-height));
         }
 
         .nav-toggle {
@@ -945,17 +904,16 @@
           right: 1rem;
           left: 1rem;
           display: grid;
-          gap: 0.35rem;
-          padding: 0.75rem;
-          border: 1px solid var(--border-default);
-          border-radius: 10px;
-          background: rgba(245, 230, 222, 0.98);
+          gap: 0.3rem;
+          padding: 0.85rem;
+          border: 1px solid var(--line);
+          border-radius: 12px;
+          background: var(--surface);
           opacity: 0;
           pointer-events: none;
           transform: translateY(-8px);
-          transition:
-            opacity var(--transition),
-            transform var(--transition);
+          transition: opacity var(--transition), transform var(--transition);
+          box-shadow: 0 12px 30px var(--shadow);
         }
 
         .site-nav.is-open .nav-links {
@@ -965,22 +923,16 @@
         }
 
         .nav-link {
-          padding: 0.55rem 0.6rem 0.75rem 1rem;
-          border-radius: 8px;
+          padding: 0.6rem 0.7rem;
         }
 
-        .nav-link::after {
-          bottom: 0.2rem;
-          left: 0.9rem;
-          width: calc(100% - 1.8rem);
-        }
-
-        .nav-link::before {
-          left: 0.25rem;
+        .edu-item {
+          grid-template-columns: 1fr;
+          gap: 0.35rem;
         }
 
         .press-link {
-          grid-template-columns: 38px minmax(0, 1fr);
+          grid-template-columns: 36px minmax(0, 1fr);
         }
 
         .press-arrow {
@@ -988,25 +940,9 @@
         }
 
         .terminal-body {
-          padding: 1rem 0.9rem;
-          font-size: 0.8rem;
-          line-height: 1.85;
           white-space: pre-wrap;
           word-break: break-word;
-          overflow-x: visible;
-        }
-
-        .hero-panel {
-          padding: 1.5rem 1.15rem;
-        }
-
-        .signal-list {
-          gap: 1.15rem;
-        }
-
-        .signal-item {
-          grid-template-columns: 1fr;
-          gap: 0.3rem;
+          font-size: 0.78rem;
         }
       }
 
@@ -1015,13 +951,10 @@
           scroll-behavior: auto;
         }
 
-        *,
-        *::before,
-        *::after {
+        *, *::before, *::after {
           animation-duration: 0.01ms !important;
           animation-iteration-count: 1 !important;
           transition-duration: 0.01ms !important;
-          scroll-behavior: auto !important;
         }
 
         .reveal {
@@ -1034,43 +967,56 @@
   <body>
     <nav class="site-nav" aria-label="Primary">
       <div class="container nav-inner">
-        <a class="nav-brand mono" href="#top">~/germaine $</a>
-        <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
-          <span></span>
-        </button>
-        <div class="nav-links mono">
-          <a class="nav-link" href="#experience">Experience</a>
-          <a class="nav-link" href="#education">Education</a>
-          <a class="nav-link" href="#skills">Skills</a>
-          <a class="nav-link" href="#leadership">Leadership</a>
-          <a class="nav-link" href="#about">About</a>
+        <a class="nav-brand" href="#top">germaine<span class="dot">.</span></a>
+        <div class="nav-right">
+          <div class="nav-links mono">
+            <a class="nav-link" href="#experience">Experience</a>
+            <a class="nav-link" href="#education">Education</a>
+            <a class="nav-link" href="#skills">Skills</a>
+            <a class="nav-link" href="#leadership">Leadership</a>
+            <a class="nav-link" href="#contact">Contact</a>
+          </div>
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+          </button>
+          <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+          </button>
         </div>
       </div>
     </nav>
 
     <main id="top">
-      <section class="hero">
-        <div class="container hero-inner">
-          <p class="eyebrow mono reveal">computer vision · multimodal ml · applied ai</p>
-          <h1 class="hero-name reveal">Germaine Hounakey<span class="hero-pronoun">she/her</span></h1>
-          <div class="hero-tagline reveal">
-            <span>ai/ml engineer · Machine Learning · community builder</span>
-            <span class="cursor" aria-hidden="true">█</span>
+      <section class="hero" id="home">
+        <div class="container">
+          <p class="eyebrow reveal">computer vision · multimodal ml · applied ai</p>
+          <h1 class="greeting reveal">Hi <span class="wave">👋</span> I'm Germaine.</h1>
+          <p class="intro reveal">
+            I'm currently a full-time AI/ML engineer at Accenture Federal Services, while pursuing my Master's in AI with a concentration in Machine Learning at the University of Michigan. I'm a self-declared nerd, and if I'm not behind an IDE coding my little heart away, I'm probably nose deep in a book or outside enjoying a hike in the woods.
+          </p>
+
+          <div class="hero-actions reveal">
+            <a class="icon-link" href="https://www.linkedin.com/in/germaine-hounakey/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.48 2.48 0 1 0 5 8.46 2.48 2.48 0 0 0 4.98 3.5ZM3 9h4v12H3zm7 0h3.83v1.64h.05c.53-1 1.84-2.06 3.8-2.06 4.07 0 4.82 2.68 4.82 6.17V21h-4v-5.54c0-1.32-.02-3.02-1.84-3.02-1.84 0-2.12 1.44-2.12 2.92V21h-4z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a class="icon-link" href="https://github.com/GermaineH" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.19c0 4.49 2.87 8.3 6.84 9.65.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.61-3.37-1.2-3.37-1.2-.45-1.18-1.11-1.49-1.11-1.49-.91-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 2.5-.35c.85 0 1.7.12 2.5.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.19C22 6.58 17.52 2 12 2Z"/></svg>
+              <span>GitHub</span>
+            </a>
           </div>
 
-          <div class="hero-grid">
-            <div class="reveal">
-              <div class="terminal" aria-label="Decorative terminal summary">
-                <div class="terminal-bar">
-                  <div class="terminal-controls" aria-hidden="true">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  <div class="terminal-title mono">session://germaine/profile</div>
+          <div class="hero-columns">
+            <div class="terminal reveal" aria-label="Decorative terminal summary">
+              <div class="terminal-bar">
+                <div class="terminal-controls" aria-hidden="true">
+                  <span></span><span></span><span></span>
                 </div>
-                <pre class="terminal-body"><span class="prompt">$</span> <span class="command">whoami</span>
-<span class="output">&gt; AI/ML Engineer @ Accenture Federal Services</span>
+                <div class="terminal-title mono">session://germaine/profile</div>
+              </div>
+              <pre class="terminal-body"><span class="prompt">$</span> <span class="command">whoami</span>
+<span class="output">&gt; ai/ml engineer @ accenture federal services</span>
 <span class="prompt">$</span> <span class="command">cat</span> <span class="highlight">focus.txt</span>
 <span class="output">&gt; computer vision, object detection, multimodal data analysis</span>
 <span class="prompt">$</span> <span class="command">education --current</span>
@@ -1078,42 +1024,27 @@
 <span class="output">&gt; <span class="hash">BS-CS</span> calvin university · computer science</span>
 <span class="prompt">$</span> <span class="command">location</span>
 <span class="output">&gt; washington dc–baltimore area</span></pre>
-              </div>
-
-              <div class="quick-links reveal">
-                <a class="icon-link" href="https://www.linkedin.com/in/germaine-hounakey/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.48 2.48 0 1 0 5 8.46 2.48 2.48 0 0 0 4.98 3.5ZM3 9h4v12H3zm7 0h3.83v1.64h.05c.53-1 1.84-2.06 3.8-2.06 4.07 0 4.82 2.68 4.82 6.17V21h-4v-5.54c0-1.32-.02-3.02-1.84-3.02-1.84 0-2.12 1.44-2.12 2.92V21h-4z"/></svg>
-                  <span>LinkedIn</span>
-                </a>
-                <a class="icon-link" href="https://www.accenture.com/us-en/industries/afs-index" target="_blank" rel="noreferrer" aria-label="Accenture Federal Services">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 3 6v6c0 5.5 3.84 10.7 9 12 5.16-1.3 9-6.5 9-12V6l-9-4Zm-1 15-4-4 1.4-1.4L11 14.2l5.6-5.6L18 10l-7 7Z"/></svg>
-                  <span>Accenture FS</span>
-                </a>
-                <a class="icon-link" href="https://umich.edu/" target="_blank" rel="noreferrer" aria-label="University of Michigan">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3Zm0 13L5.5 12.45V16c0 2.49 3.13 4.5 6.5 4.5s6.5-2.01 6.5-4.5v-3.55L12 16Z"/></svg>
-                  <span>U-M</span>
-                </a>
-              </div>
             </div>
 
-            <aside class="hero-panel reveal">
-              <h2>// focus areas</h2>
-              <p>
-                Applied machine learning for real-world problems, with an emphasis on computer vision, object detection, and multimodal data analysis.
-              </p>
-              <div class="signal-list">
-                <div class="signal-item">
-                  <div class="signal-label">current</div>
-                  <div class="signal-value">AI/ML Engineer at Accenture Federal Services — computer vision and multimodal ML for federal clients</div>
+            <aside class="side-card reveal">
+              <div>
+                <h2>// what I care about</h2>
+                <div class="tag-row">
+                  <span class="tag-pill">Computer Vision</span>
+                  <span class="tag-pill">Object Detection</span>
+                  <span class="tag-pill">Multimodal Data Analysis</span>
+                  <span class="tag-pill">Machine Learning</span>
+                  <span class="tag-pill">Image Processing</span>
+                  <span class="tag-pill">Data Analysis</span>
                 </div>
-                <div class="signal-item">
-                  <div class="signal-label">studying</div>
-                  <div class="signal-value">MS in Artificial Intelligence at the University of Michigan (2024–2026), specializing in machine learning</div>
-                </div>
-                <div class="signal-item">
-                  <div class="signal-label">bias</div>
-                  <div class="signal-value">Practical models, careful data work, and lowering the barrier for others entering the field</div>
-                </div>
+              </div>
+              <div>
+                <h2>// currently</h2>
+                <ul class="mini-list">
+                  <li><strong>AI/ML Engineer</strong> — Accenture Federal Services</li>
+                  <li><strong>MS in AI</strong> — University of Michigan (2024–2026)</li>
+                  <li>Based in the Washington DC–Baltimore area</li>
+                </ul>
               </div>
             </aside>
           </div>
@@ -1122,110 +1053,70 @@
 
       <section class="section" id="experience">
         <div class="container">
-          <header class="section-header reveal">
-            <div class="section-kicker mono">// experience</div>
-            <h2 class="section-title">Experience</h2>
+          <header class="reveal" style="margin-bottom: 2.2rem;">
+            <div class="section-eyebrow mono">// experience</div>
+            <h2 class="section-title">Where I've worked</h2>
             <p class="section-description">Roles across federal AI research, healthcare software, and civil engineering.</p>
           </header>
 
-          <div class="projects-grid">
-            <article class="card project-featured reveal">
-              <a class="repo-link" href="https://www.accenture.com/us-en/industries/afs-index" target="_blank" rel="noreferrer">accenture federal services</a>
-              <p>
-                <strong style="color: var(--text-primary);">AI/ML Engineer · Full-time</strong><br />
-                Building and delivering AI/ML systems for federal clients. Applied work across computer vision, object detection, and multimodal data analysis. Washington DC–Baltimore area.
-              </p>
-              <div class="project-meta">
-                <span class="lang-pill"><span class="lang-dot" style="background:#e97265"></span>Python · CV · ML</span>
-                <span class="meta-pill">Aug 2026 – Present</span>
-                <span class="meta-pill">Current</span>
-              </div>
-              <div class="card-footer">
-                <span class="license-note">current role</span>
-                <div class="stats">
-                  <span>federal ai</span>
-                  <span>applied ml</span>
-                </div>
+          <div class="timeline">
+            <article class="timeline-item is-current reveal">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date mono">Aug 2026 – Present</div>
+              <h3 class="timeline-role">AI/ML Engineer</h3>
+              <a class="timeline-org" href="https://www.accenture.com/us-en/industries/afs-index" target="_blank" rel="noreferrer">Accenture Federal Services</a>
+              <p class="timeline-desc">Building and delivering AI/ML systems for federal clients. Applied work across computer vision, object detection, and multimodal data analysis. Washington DC–Baltimore area.</p>
+              <div class="timeline-tags tag-row">
+                <span class="tag-pill">Python</span>
+                <span class="tag-pill">Computer Vision</span>
+                <span class="tag-pill">ML</span>
               </div>
             </article>
 
-            <article class="card project-featured reveal">
-              <a class="repo-link" href="https://www.usace.army.mil/" target="_blank" rel="noreferrer">us army corps of engineers</a>
-              <p>
-                <strong style="color: var(--text-primary);">AI Engineer Fellow · Full-time</strong><br />
-                Built AI/ML systems for federal research applications. Worked across Python, computer vision, object detection, and multimodal data analysis pipelines. Hanover, New Hampshire · On-site.
-              </p>
-              <div class="project-meta">
-                <span class="lang-pill"><span class="lang-dot" style="background:#D08A7E"></span>Python · CV · ML</span>
-                <span class="meta-pill">Jan 2025 – Mar 2026</span>
-                <span class="meta-pill">Fellowship</span>
-              </div>
-              <div class="card-footer">
-                <span class="license-note">1 yr 3 mos · on-site</span>
-                <div class="stats">
-                  <span>federal research</span>
-                  <span>applied ml</span>
-                </div>
+            <article class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date mono">Jan 2025 – Mar 2026</div>
+              <h3 class="timeline-role">AI Engineer Fellow</h3>
+              <a class="timeline-org" href="https://www.usace.army.mil/" target="_blank" rel="noreferrer">US Army Corps of Engineers</a>
+              <p class="timeline-desc">Built AI/ML systems for federal research applications. Worked across Python, computer vision, object detection, and multimodal data analysis pipelines. Hanover, New Hampshire · On-site.</p>
+              <div class="timeline-tags tag-row">
+                <span class="tag-pill">Python</span>
+                <span class="tag-pill">Computer Vision</span>
+                <span class="tag-pill">ML</span>
               </div>
             </article>
 
-            <article class="card project-featured reveal">
-              <a class="repo-link" href="https://corewellhealth.org/" target="_blank" rel="noreferrer">corewell health</a>
-              <p>
-                <strong style="color: var(--text-primary);">Software Engineer Intern · Full-time</strong><br />
-                Built and maintained data workflows and internal tooling for one of Michigan's largest health systems. Focused on SQL, SSIS pipelines, and cross-team delivery. Grand Rapids, Michigan.
-              </p>
-              <div class="project-meta">
-                <span class="lang-pill"><span class="lang-dot" style="background:#D08A7E"></span>SQL · SSIS</span>
-                <span class="meta-pill">May 2022 – Dec 2023</span>
-                <span class="meta-pill">Healthcare</span>
-              </div>
-              <div class="card-footer">
-                <span class="license-note">1 yr 8 mos</span>
-                <div class="stats">
-                  <span>data engineering</span>
-                  <span>internal tools</span>
-                </div>
+            <article class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date mono">May 2022 – Dec 2023</div>
+              <h3 class="timeline-role">Software Engineer Intern</h3>
+              <a class="timeline-org" href="https://corewellhealth.org/" target="_blank" rel="noreferrer">Corewell Health</a>
+              <p class="timeline-desc">Built and maintained data workflows and internal tooling for one of Michigan's largest health systems. Focused on SQL, SSIS pipelines, and cross-team delivery. Grand Rapids, Michigan.</p>
+              <div class="timeline-tags tag-row">
+                <span class="tag-pill">SQL</span>
+                <span class="tag-pill">SSIS</span>
               </div>
             </article>
 
-            <article class="card project-featured reveal">
-              <a class="repo-link" href="https://calvin.edu/" target="_blank" rel="noreferrer">calvin university</a>
-              <p>
-                <strong style="color: var(--text-primary);">Computer Science Grader</strong><br />
-                Graded CS coursework and supported students through the intro programming sequence during the fall 2021 semester.
-              </p>
-              <div class="project-meta">
-                <span class="lang-pill"><span class="lang-dot" style="background:#D08A7E"></span>Teaching</span>
-                <span class="meta-pill">Sep – Dec 2021</span>
-                <span class="meta-pill">Academic</span>
-              </div>
-              <div class="card-footer">
-                <span class="license-note">4 mos</span>
-                <div class="stats">
-                  <span>coursework</span>
-                  <span>student support</span>
-                </div>
+            <article class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date mono">Sep – Dec 2021</div>
+              <h3 class="timeline-role">Computer Science Grader</h3>
+              <a class="timeline-org" href="https://calvin.edu/" target="_blank" rel="noreferrer">Calvin University</a>
+              <p class="timeline-desc">Graded CS coursework and supported students through the intro programming sequence during the fall 2021 semester.</p>
+              <div class="timeline-tags tag-row">
+                <span class="tag-pill">Teaching</span>
               </div>
             </article>
 
-            <article class="card project-featured reveal">
-              <a class="repo-link" href="https://www.rockfordconstruction.com/" target="_blank" rel="noreferrer">rockford construction</a>
-              <p>
-                <strong style="color: var(--text-primary);">Engineer Intern</strong><br />
-                Summer engineering internship covering project management, scheduling, and coordination across active construction sites. Grand Rapids, Michigan.
-              </p>
-              <div class="project-meta">
-                <span class="lang-pill"><span class="lang-dot" style="background:#d9b46b"></span>Engineering</span>
-                <span class="meta-pill">May – Aug 2020</span>
-                <span class="meta-pill">Internship</span>
-              </div>
-              <div class="card-footer">
-                <span class="license-note">4 mos</span>
-                <div class="stats">
-                  <span>project management</span>
-                  <span>on-site</span>
-                </div>
+            <article class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date mono">May – Aug 2020</div>
+              <h3 class="timeline-role">Engineer Intern</h3>
+              <a class="timeline-org" href="https://www.rockfordconstruction.com/" target="_blank" rel="noreferrer">Rockford Construction</a>
+              <p class="timeline-desc">Summer engineering internship covering project management, scheduling, and coordination across active construction sites. Grand Rapids, Michigan.</p>
+              <div class="timeline-tags tag-row">
+                <span class="tag-pill">Engineering</span>
               </div>
             </article>
           </div>
@@ -1234,100 +1125,92 @@
 
       <section class="section" id="education">
         <div class="container">
-          <header class="section-header reveal">
-            <div class="section-kicker mono">// education</div>
+          <header class="reveal" style="margin-bottom: 2.2rem;">
+            <div class="section-eyebrow mono">// education</div>
             <h2 class="section-title">Education &amp; Certifications</h2>
             <p class="section-description">Graduate work in AI at Michigan, undergraduate CS foundations at Calvin, plus continuing certifications.</p>
           </header>
 
-          <div class="research-list">
-            <div class="year-group reveal">
-              <article class="publication">
-                <div class="publication-year mono">2024 – 2026</div>
-                <div>
-                  <a class="publication-title" href="https://umich.edu/" target="_blank" rel="noreferrer">University of Michigan</a>
-                  <div class="publication-venue">Master of Science in Artificial Intelligence</div>
-                  <div class="publication-authors"><strong>Specialization:</strong> Machine Learning</div>
-                  <div class="publication-note">Graduate coursework and research spanning image processing, data analysis, and applied AI methods.</div>
-                  <div class="publication-links">
-                    <a class="link-pill" href="https://umich.edu/" target="_blank" rel="noreferrer">U-M</a>
-                    <span class="meta-pill">In Progress</span>
-                  </div>
+          <div class="edu-list">
+            <article class="edu-item reveal">
+              <div class="edu-period mono">2024 – 2026</div>
+              <div>
+                <a class="edu-title" href="https://umich.edu/" target="_blank" rel="noreferrer">University of Michigan</a>
+                <div class="edu-venue">Master of Science in Artificial Intelligence · Specialization in Machine Learning</div>
+                <div class="edu-note">Graduate coursework and research spanning image processing, data analysis, and applied AI methods.</div>
+                <div class="edu-links">
+                  <a class="link-pill" href="https://umich.edu/" target="_blank" rel="noreferrer">U-M</a>
+                  <span class="link-pill" style="color: var(--ink-faint);">In Progress</span>
                 </div>
-              </article>
-            </div>
+              </div>
+            </article>
 
-            <div class="year-group reveal">
-              <article class="publication">
-                <div class="publication-year mono">Undergrad</div>
-                <div>
-                  <a class="publication-title" href="https://calvin.edu/" target="_blank" rel="noreferrer">Calvin University</a>
-                  <div class="publication-venue">Bachelor's Degree, Computer Science</div>
-                  <div class="publication-authors">Grand Rapids, Michigan</div>
-                  <div class="publication-note">Coursework included Database Management, Object Oriented Programming, and core CS fundamentals. Active in student leadership across campus.</div>
-                  <div class="publication-links">
-                    <a class="link-pill" href="https://calvin.edu/" target="_blank" rel="noreferrer">Calvin</a>
-                  </div>
+            <article class="edu-item reveal">
+              <div class="edu-period mono">2019 – 2023</div>
+              <div>
+                <a class="edu-title" href="https://calvin.edu/" target="_blank" rel="noreferrer">Calvin University</a>
+                <div class="edu-venue">Bachelor's Degree, Computer Science · Grand Rapids, Michigan</div>
+                <div class="edu-note">Coursework included Database Management, Object Oriented Programming, and core CS fundamentals. Active in student leadership across campus.</div>
+                <div class="edu-links">
+                  <a class="link-pill" href="https://calvin.edu/" target="_blank" rel="noreferrer">Calvin</a>
                 </div>
-              </article>
-            </div>
+              </div>
+            </article>
 
-            <div class="year-group reveal">
-              <article class="publication">
-                <div class="publication-year mono">May 2024</div>
-                <div>
-                  <a class="publication-title" href="https://grow.google/certificates/it-support/" target="_blank" rel="noreferrer">Technical Support Fundamentals</a>
-                  <div class="publication-venue">Google · Professional Certificate</div>
-                  <div class="publication-authors"><strong>Skills:</strong> Problem Solving · Network Administration</div>
-                  <div class="publication-links">
-                    <a class="link-pill" href="https://grow.google/certificates/it-support/" target="_blank" rel="noreferrer">Credential</a>
-                  </div>
+            <article class="edu-item reveal">
+              <div class="edu-period mono">May 2024</div>
+              <div>
+                <a class="edu-title" href="https://grow.google/certificates/it-support/" target="_blank" rel="noreferrer">Technical Support Fundamentals</a>
+                <div class="edu-venue">Google · Professional Certificate</div>
+                <div class="edu-note"><strong style="color: var(--ink);">Skills:</strong> Problem Solving · Network Administration</div>
+                <div class="edu-links">
+                  <a class="link-pill" href="https://grow.google/certificates/it-support/" target="_blank" rel="noreferrer">Credential</a>
                 </div>
-              </article>
-            </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
       <section class="section" id="skills">
         <div class="container">
-          <header class="section-header reveal">
-            <div class="section-kicker mono">// skills</div>
+          <header class="reveal" style="margin-bottom: 2.2rem;">
+            <div class="section-eyebrow mono">// skills</div>
             <h2 class="section-title">Skills &amp; Focus Areas</h2>
             <p class="section-description">Applied ML, computer vision, and data engineering — the tools and techniques I work with day to day.</p>
           </header>
 
           <div class="skills-block reveal">
-            <div class="skills-label">// machine learning &amp; ai</div>
-            <div class="skills-grid">
-              <span class="skill-chip">Object Detection</span>
-              <span class="skill-chip">Computer Vision</span>
-              <span class="skill-chip">Multimodal Data Analysis</span>
-              <span class="skill-chip">Machine Learning</span>
-              <span class="skill-chip">Image Processing</span>
-              <span class="skill-chip">Data Analysis</span>
+            <div class="skills-label">Machine learning &amp; AI</div>
+            <div class="tag-row">
+              <span class="tag-pill">Object Detection</span>
+              <span class="tag-pill">Computer Vision</span>
+              <span class="tag-pill">Multimodal Data Analysis</span>
+              <span class="tag-pill">Machine Learning</span>
+              <span class="tag-pill">Image Processing</span>
+              <span class="tag-pill">Data Analysis</span>
             </div>
           </div>
 
           <div class="skills-block reveal">
-            <div class="skills-label">// programming &amp; tooling</div>
-            <div class="skills-grid">
-              <span class="skill-chip">Python</span>
-              <span class="skill-chip">SQL</span>
-              <span class="skill-chip">SSIS</span>
-              <span class="skill-chip">Object Oriented Programming</span>
-              <span class="skill-chip">Database Management</span>
+            <div class="skills-label">Programming &amp; tooling</div>
+            <div class="tag-row">
+              <span class="tag-pill">Python</span>
+              <span class="tag-pill">SQL</span>
+              <span class="tag-pill">SSIS</span>
+              <span class="tag-pill">Object Oriented Programming</span>
+              <span class="tag-pill">Database Management</span>
             </div>
           </div>
 
           <div class="skills-block reveal">
-            <div class="skills-label">// professional</div>
-            <div class="skills-grid">
-              <span class="skill-chip">Project Management</span>
-              <span class="skill-chip">Problem Solving</span>
-              <span class="skill-chip">Time Management</span>
-              <span class="skill-chip">Customer Service</span>
-              <span class="skill-chip">Network Administration</span>
+            <div class="skills-label">Professional</div>
+            <div class="tag-row">
+              <span class="tag-pill">Project Management</span>
+              <span class="tag-pill">Problem Solving</span>
+              <span class="tag-pill">Time Management</span>
+              <span class="tag-pill">Customer Service</span>
+              <span class="tag-pill">Network Administration</span>
             </div>
           </div>
         </div>
@@ -1335,8 +1218,8 @@
 
       <section class="section" id="leadership">
         <div class="container">
-          <header class="section-header reveal">
-            <div class="section-kicker mono">// leadership</div>
+          <header class="reveal" style="margin-bottom: 2.2rem;">
+            <div class="section-eyebrow mono">// leadership</div>
             <h2 class="section-title">Leadership &amp; Community</h2>
             <p class="section-description">Building spaces for students to grow into engineers — clubs founded, communities led, workshops hosted.</p>
           </header>
@@ -1375,28 +1258,26 @@
         </div>
       </section>
 
-      <section class="section" id="about">
+      <section class="section" id="contact">
         <div class="container">
-          <header class="section-header reveal">
-            <div class="section-kicker mono">// about</div>
-            <h2 class="section-title">About &amp; Contact</h2>
+          <header class="reveal" style="margin-bottom: 2.2rem;">
+            <div class="section-eyebrow mono">// contact</div>
+            <h2 class="section-title">Contact</h2>
           </header>
 
-          <div class="about-grid">
+          <div class="about-grid" style="grid-template-columns: minmax(0, 1fr); max-width: 560px;">
             <article class="about-card reveal">
-              <p>
-                AI/ML engineer working at the intersection of computer vision, multimodal data analysis, and applied machine learning. Currently an AI/ML Engineer at Accenture Federal Services and pursuing an MS in Artificial Intelligence at the University of Michigan. Previously an AI Engineer Fellow with the US Army Corps of Engineers. Based in the Washington DC–Baltimore area.
-              </p>
-              <div class="about-meta">location: <a href="#">washington dc–baltimore area</a></div>
-            </article>
+              <h2 class="mono" style="margin: 0 0 0.9rem; font-size: 0.82rem; letter-spacing: 0.03em; color: var(--ink-faint); text-transform: lowercase;">// send me an email</h2>
+              <form class="email-box" id="email-box">
+                <label class="email-label" for="sender-name">Your name</label>
+                <input class="email-input" type="text" id="sender-name" placeholder="Jane Doe" required />
 
-            <article class="about-card reveal">
-              <div class="contact-links">
-                <a href="https://www.linkedin.com/in/germaine-hounakey/" target="_blank" rel="noreferrer">LinkedIn →</a>
-                <a href="https://www.accenture.com/us-en/industries/afs-index" target="_blank" rel="noreferrer">Accenture FS →</a>
-                <a href="https://umich.edu/" target="_blank" rel="noreferrer">U-M →</a>
-              </div>
-              <div class="colophon">Zero dependencies. Just HTML, CSS &amp; JS.</div>
+                <label class="email-label" for="sender-message">Message</label>
+                <textarea class="email-input" id="sender-message" rows="4" placeholder="Hi Germaine, ..." required></textarea>
+
+                <button class="btn-primary" type="submit">Send email →</button>
+              </form>
+              <div class="colophon">Or reach me directly at <a href="mailto:germainehounakey4@gmail.com" style="color: var(--coral-bright);">germainehounakey4@gmail.com</a></div>
             </article>
           </div>
         </div>
@@ -1405,7 +1286,6 @@
 
     <footer class="footer">
       <div class="container">
-        <hr class="footer-rule" />
         <div class="footer-copy">© 2026 Germaine Hounakey</div>
       </div>
     </footer>
@@ -1416,9 +1296,11 @@
       const navLinks = Array.from(document.querySelectorAll(".nav-link"));
       const sections = Array.from(document.querySelectorAll("main section[id]"));
       const revealNodes = Array.from(document.querySelectorAll(".reveal"));
+      const themeToggle = document.querySelector(".theme-toggle");
+      const htmlEl = document.documentElement;
 
       revealNodes.forEach((node, index) => {
-        node.style.setProperty("--delay", `${(index % 10) * 70}ms`);
+        node.style.setProperty("--delay", `${(index % 10) * 60}ms`);
       });
 
       const revealObserver = new IntersectionObserver(
@@ -1429,15 +1311,13 @@
             observer.unobserve(entry.target);
           });
         },
-        { threshold: 0.18, rootMargin: "0px 0px -8% 0px" }
+        { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
       );
-
       revealNodes.forEach((node) => revealObserver.observe(node));
 
       const setActiveLink = (id) => {
         navLinks.forEach((link) => {
-          const active = link.getAttribute("href") === `#${id}`;
-          link.classList.toggle("is-active", active);
+          link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
         });
       };
 
@@ -1446,17 +1326,10 @@
           const visible = entries
             .filter((entry) => entry.isIntersecting)
             .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-          if (visible) {
-            setActiveLink(visible.target.id);
-          }
+          if (visible) setActiveLink(visible.target.id);
         },
-        {
-          threshold: [0.2, 0.35, 0.55],
-          rootMargin: "-20% 0px -45% 0px",
-        }
+        { threshold: [0.2, 0.35, 0.55], rootMargin: "-20% 0px -45% 0px" }
       );
-
       sections.forEach((section) => sectionObserver.observe(section));
 
       navLinks.forEach((link) => {
@@ -1486,9 +1359,27 @@
       const handleScrollState = () => {
         nav.classList.toggle("is-scrolled", window.scrollY > 12);
       };
-
       handleScrollState();
       window.addEventListener("scroll", handleScrollState, { passive: true });
+
+      // Theme toggle — session only (no persistence), defaults to light
+      themeToggle.addEventListener("click", () => {
+        const current = htmlEl.getAttribute("data-theme");
+        htmlEl.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+      });
+
+      // Email contact box — opens the visitor's mail client with the message prefilled
+      const emailBox = document.getElementById("email-box");
+      if (emailBox) {
+        emailBox.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const name = document.getElementById("sender-name").value.trim();
+          const message = document.getElementById("sender-message").value.trim();
+          const subject = encodeURIComponent(`Message from ${name || "your website"}`);
+          const body = encodeURIComponent(`${message}\n\n— ${name}`);
+          window.location.href = `mailto:germainehounakey4@gmail.com?subject=${subject}&body=${body}`;
+        });
+      }
     </script>
   </body>
 </html>
